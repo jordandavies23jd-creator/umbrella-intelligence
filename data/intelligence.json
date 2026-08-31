@@ -1,114 +1,393 @@
 {
-  "version": "1.0",
-  "purpose": "Compounding decision intelligence for the Umbrella project portfolio.",
+  "version": "1.1",
+  "purpose": "The persistent source of truth for Umbrella project decisions. Its purpose is not to display notes; it is to make research and project selection compound.",
+  "umbrella_model": {
+    "description": "A portfolio and revenue lab that researches, builds or buys, improves, monetises, keeps, expands or sells assets, then feeds the lessons into the next decision.",
+    "sections": {
+      "branded": "Projects that publicly carry the Umbrella identity/face and are intended to strengthen visible reputation, audience, trust and ecosystem.",
+      "unbranded": "Standalone brands or quiet assets not publicly associated with Umbrella, including assets designed to be sold."
+    },
+    "rules": [
+      "Branding status must not bias the economic assessment of a project.",
+      "Early projects should prioritise learning while still pursuing real revenue.",
+      "Every project is a learning asset even when it is parked or sold.",
+      "Projects are assessed on their own economics, not because they fit the founder's existing trade or background.",
+      "A project may be kept, improved, expanded, sold or killed based on evidence."
+    ]
+  },
+  "mission": {
+    "current": "Find Project 1: the revenue-producing project with the strongest realistic odds of earning and teaching us useful lessons.",
+    "not_required": [
+      "Direct customer payment",
+      "SaaS subscription revenue",
+      "Staying inside trades or bricklaying",
+      "A goldmine or perfect startup"
+    ],
+    "preferred_outcome": "A relatively low-cost asset that can create repeatable or increasingly automated revenue while leaving time and capital to pursue larger projects such as Buildalong."
+  },
   "decision_protocol": [
-    "Retrieve existing intelligence",
-    "Identify gaps",
-    "Research only missing evidence",
-    "Store findings with confidence and decision impact",
-    "Update decision without attachment"
+    "Retrieve existing intelligence relevant to the decision.",
+    "Identify what is already known and what remains unknown.",
+    "Research only the evidence gaps instead of restarting from generic idea lists.",
+    "Record findings, confidence, source type, implications and contradictions.",
+    "Score the opportunity using weighted criteria.",
+    "Choose the next experiment based on evidence rather than attachment.",
+    "Store the result so the next decision starts ahead of the previous one."
   ],
+  "weighted_assessment": {
+    "principle": "Factors do not have equal influence. Revenue and realistic progress toward revenue outweigh learning value.",
+    "factors": [
+      {
+        "name": "Revenue potential",
+        "weight": 30,
+        "reason": "Primary mission is revenue creation."
+      },
+      {
+        "name": "Speed to first revenue",
+        "weight": 20,
+        "reason": "Early validation and cash flow reduce the cost of being wrong."
+      },
+      {
+        "name": "Automation potential",
+        "weight": 15,
+        "reason": "The portfolio should increasingly create revenue without proportional manual effort."
+      },
+      {
+        "name": "Traffic or demand potential",
+        "weight": 15,
+        "reason": "The project needs a realistic path to users or transactions."
+      },
+      {
+        "name": "Scalability",
+        "weight": 8,
+        "reason": "Revenue should be able to grow faster than workload."
+      },
+      {
+        "name": "Startup cost and complexity",
+        "weight": 7,
+        "reason": "Early experiments should be affordable and fast to test."
+      },
+      {
+        "name": "Learning value",
+        "weight": 5,
+        "reason": "Useful, but it should not rescue a weak revenue opportunity."
+      }
+    ],
+    "score_rule": "Score evidence quality separately from attractiveness. A high score with weak evidence remains unproven."
+  },
   "projects": [
     {
       "id": "specflow",
       "name": "SpecFlow",
+      "section": "unassigned",
       "status": "parked",
-      "hypothesis": "A tool for web professionals to turn client discovery information into clear project specifications.",
-      "revenue_assessment": "Basic questionnaire-to-specification generation did not provide enough evidence of strong revenue viability.",
-      "stronger_hypothesis": "Website project scope and requirement intelligence that detects missing requirements, contradictions and scope risks before quoting or building.",
+      "original_hypothesis": "A tool for web professionals to turn client discovery information into a clear project specification that can be sent to another company or used to guide a build.",
+      "why_started": [
+        "Fast to build and test as a digital product.",
+        "Appeared to solve a real workflow problem around collecting requirements.",
+        "Provided a useful first learning project."
+      ],
+      "revenue_mechanisms_considered": [
+        "Subscription",
+        "One-off payment",
+        "Agency workflow tool"
+      ],
+      "revenue_assessment": "The basic specification generator did not provide enough evidence of a strong revenue path. A generic document-generation layer is vulnerable to substitution by existing tools and general AI.",
+      "stronger_hypothesis": "Website project scope and requirement intelligence that identifies missing requirements, contradictions, ambiguity and scope risks before quoting or building.",
       "lessons": [
-        "Buildability is not viability",
-        "A document generator is easily substituted by existing tools and AI",
-        "The intelligence layer is more valuable than the formatting output"
+        "Buildability is not viability.",
+        "A technically useful output is not automatically a monetisable product.",
+        "The intelligence layer may be more defensible than the formatted document.",
+        "A project should be parked when evidence is weak rather than defended because work has already been invested."
       ],
       "revisit_triggers": [
-        "Strong evidence that agencies will pay to reduce scope risk",
-        "A compelling non-subscription revenue mechanism",
-        "A clear distribution advantage"
+        "Strong evidence that agencies lose meaningful money to scope risk.",
+        "Evidence of willingness to pay for requirement or scope intelligence.",
+        "A clear non-subscription monetisation mechanism.",
+        "A clear distribution advantage."
       ]
+    },
+    {
+      "id": "buildalong",
+      "name": "Buildalong",
+      "section": "branded_candidate",
+      "status": "future",
+      "original_hypothesis": "A builder-to-customer experience product that helps possible jobs, notes, progress and communication stay professional and simple.",
+      "strategic_role": "Potential larger project with more development and capital requirements. It is not the project that must fund the entire journey from day one.",
+      "core_principle": "Stay professional. Keep it simple.",
+      "audience_principle": "The builder pays because the customer's experience is valuable.",
+      "current_position": "Future project; revenue-building projects should help create time, money and learning for it."
     },
     {
       "id": "project-1",
       "name": "Project 1 Search",
+      "section": "portfolio",
       "status": "active",
-      "objective": "Find a revenue-producing digital project with the strongest realistic odds of earning, without limiting revenue to direct customer payment.",
-      "priorities": [
-        [
-          "Revenue potential",
-          1
-        ],
-        [
-          "Speed to first revenue",
-          2
-        ],
-        [
-          "Automation potential",
-          3
-        ],
-        [
-          "Traffic or demand potential",
-          4
-        ],
-        [
-          "Scalability",
-          5
-        ],
-        [
-          "Startup cost",
-          6
-        ],
-        [
-          "Learning value",
-          7
-        ]
+      "objective": "Find the strongest evidence-backed revenue-producing digital asset without limiting the search to SaaS, apps, websites or direct customer payments.",
+      "selection_rules": [
+        "Money mechanism must be identifiable before serious development.",
+        "Existing demand is preferred over trying to manufacture demand.",
+        "The project should be testable quickly and killable without large sunk cost.",
+        "Traffic alone is not enough; the path from activity to revenue must be explicit.",
+        "Do not choose an idea simply because it is easy to build.",
+        "Do not choose an idea simply because it matches a familiar trade or industry."
       ]
+    },
+    {
+      "id": "umbrella-intelligence",
+      "name": "Umbrella Intelligence",
+      "section": "internal_foundation",
+      "status": "active",
+      "objective": "Store and retrieve research, decisions, evidence, failures and lessons so every project improves the next one.",
+      "critical_requirement": "The intelligence must be usable in future decision-making, not merely visible in a dashboard."
     }
   ],
-  "lessons": [
-    "Revenue creation is the goal; direct customer payment is optional.",
-    "Existing demand is generally preferable to manufacturing demand.",
-    "A project needs an identifiable money mechanism before serious development.",
-    "Projects should be easy to test and easy to park or kill.",
-    "Research should compound instead of restarting from generic idea lists."
+  "confirmed_lessons": [
+    {
+      "title": "Revenue creation is the goal",
+      "detail": "A project can earn through subscriptions, one-off sales, advertising, affiliate commission, referrals, lead generation, asset sales or other mechanisms. Direct payment by the user is optional."
+    },
+    {
+      "title": "Existing demand is an advantage",
+      "detail": "Prefer projects that capture a need people already express through searches, buying intent or repeated workflows."
+    },
+    {
+      "title": "Buildability is not viability",
+      "detail": "A product can be easy to create and still have weak demand, distribution or monetisation."
+    },
+    {
+      "title": "Traffic must connect to money",
+      "detail": "High traffic is not automatically valuable. The revenue mechanism and visitor intent matter."
+    },
+    {
+      "title": "Projects should be easy to test and easy to kill",
+      "detail": "Early experiments should produce evidence before large amounts of time or money are committed."
+    },
+    {
+      "title": "Research must compound",
+      "detail": "Before new research, retrieve what we already know and focus on missing evidence."
+    },
+    {
+      "title": "Economics outrank attachment",
+      "detail": "A project can be kept, expanded, sold, parked or killed based on evidence rather than effort already invested."
+    },
+    {
+      "title": "The portfolio can learn across categories",
+      "detail": "Lessons about demand, monetisation, traffic, automation and distribution can transfer between apps, sites, tools and assets."
+    },
+    {
+      "title": "Reputation can compound, but branding is optional",
+      "detail": "The Branded can strengthen trust and traffic; The Unbranded can operate independently or be built for sale. Neither gets an automatic economic advantage."
+    }
   ],
   "opportunity_fields": [
     {
+      "id": "lead-gen",
       "name": "High-intent lead generation",
-      "mechanisms": [
-        "lead sales",
-        "referrals"
+      "model": "Capture people already seeking a valuable service and connect them with providers.",
+      "revenue": [
+        "Lead sale",
+        "Referral fee",
+        "Revenue share",
+        "Featured placement"
       ],
-      "status": "researching"
+      "strengths": [
+        "Clear commercial intent",
+        "Users may not need to pay",
+        "Revenue can be tied to transaction value"
+      ],
+      "risks": [
+        "Traffic acquisition difficulty",
+        "Lead quality requirements",
+        "Provider relationships"
+      ],
+      "current_assessment": "Very high interest; needs niche-by-niche evidence."
     },
     {
-      "name": "Free useful tool",
-      "mechanisms": [
-        "affiliate",
-        "referral",
-        "advertising",
-        "leads"
+      "id": "utility",
+      "name": "Free useful tool → revenue engine",
+      "model": "Give immediate value through a calculator, checker, estimator, generator, converter or lookup, then monetise relevant intent.",
+      "revenue": [
+        "Affiliate commission",
+        "Referral",
+        "Lead generation",
+        "Advertising",
+        "Premium upgrade"
       ],
-      "status": "researching"
+      "strengths": [
+        "Low-friction usage",
+        "Potential search demand",
+        "No requirement for users to pay"
+      ],
+      "risks": [
+        "Easy to copy",
+        "Generic tools may struggle to rank",
+        "Monetisation must fit the exact user moment"
+      ],
+      "current_assessment": "Very high interest; strong candidate if a narrow demand gap is found."
     },
     {
-      "name": "Niche comparison or directory",
-      "mechanisms": [
-        "affiliate",
-        "featured listings",
-        "advertising",
-        "leads"
+      "id": "comparison",
+      "name": "Niche comparison / directory",
+      "model": "Help users decide between suppliers, products, services or options and monetise the decision journey.",
+      "revenue": [
+        "Affiliate commission",
+        "Featured listings",
+        "Advertising",
+        "Leads",
+        "Sponsorship"
       ],
-      "status": "researching"
+      "strengths": [
+        "Captures decision intent",
+        "Multiple monetisation routes",
+        "Can grow into a data asset"
+      ],
+      "risks": [
+        "Competition and SEO difficulty",
+        "Data freshness",
+        "Thin or generic directories have weak differentiation"
+      ],
+      "current_assessment": "High interest; niche selection is critical."
     },
     {
-      "name": "Automated information or data asset",
-      "mechanisms": [
-        "advertising",
-        "affiliate",
-        "referral",
-        "data products"
+      "id": "data-asset",
+      "name": "Automated information / data asset",
+      "model": "Collect, organise and maintain useful structured information that people struggle to search or compare.",
+      "revenue": [
+        "Advertising",
+        "Affiliate",
+        "Referral",
+        "Data products",
+        "Sponsored placement"
       ],
-      "status": "researching"
+      "strengths": [
+        "Can compound into an asset",
+        "Potential automation",
+        "Can create many useful entry points"
+      ],
+      "risks": [
+        "Data sourcing and maintenance",
+        "Slow early traction",
+        "Information alone is not enough without a useful interface"
+      ],
+      "current_assessment": "High interest; potentially slower to first revenue."
+    },
+    {
+      "id": "digital-products",
+      "name": "Digital products and repeatable assets",
+      "model": "Create once, sell repeatedly or use the asset to support other revenue mechanisms.",
+      "revenue": [
+        "Direct sale",
+        "Bundles",
+        "Licensing",
+        "Upsells"
+      ],
+      "strengths": [
+        "Simple fulfilment",
+        "Low marginal cost"
+      ],
+      "risks": [
+        "Distribution remains the hard part",
+        "Generic products can be commoditised"
+      ],
+      "current_assessment": "Open; only pursue where demand and distribution are clear."
+    },
+    {
+      "id": "buy-improve-sell",
+      "name": "Buy → improve → profit → keep or sell",
+      "model": "Acquire undervalued products or digital assets, improve their economics or presentation, then retain or sell.",
+      "revenue": [
+        "Resale margin",
+        "Cash flow while held",
+        "Asset appreciation"
+      ],
+      "strengths": [
+        "Fits Umbrella's long-term model",
+        "Creates real-world pricing and operational learning"
+      ],
+      "risks": [
+        "Requires capital",
+        "Bad acquisition decisions",
+        "Operational complexity"
+      ],
+      "current_assessment": "Long-term portfolio path; not necessarily the first zero-cost project."
     }
+  ],
+  "rejected_or_parked_patterns": [
+    {
+      "pattern": "Generic AI wrapper",
+      "reason": "A thin layer over broadly available AI can be easy to substitute unless it owns a specific workflow, data advantage or distribution channel.",
+      "status": "avoid_as_default"
+    },
+    {
+      "pattern": "Build first, monetisation later",
+      "reason": "This repeats the SpecFlow risk. The path from user activity to revenue should be identified before serious development.",
+      "status": "avoid"
+    },
+    {
+      "pattern": "Generic idea lists as final evidence",
+      "reason": "Lists are useful for discovery but do not prove demand, distribution, economics or competitive opportunity.",
+      "status": "research_only"
+    },
+    {
+      "pattern": "Broad traffic without commercial intent",
+      "reason": "Attention is not enough when visitors have no natural next action that creates revenue.",
+      "status": "avoid_as_default"
+    },
+    {
+      "pattern": "Choosing only familiar industries",
+      "reason": "The portfolio should search for economics and opportunity across categories rather than forcing every project into bricklaying or trades.",
+      "status": "avoid_bias"
+    }
+  ],
+  "research_queue": [
+    {
+      "priority": 1,
+      "task": "Find narrow opportunities where existing high-intent demand and a direct monetisation path meet.",
+      "target_fields": [
+        "Lead generation",
+        "Free useful tools",
+        "Comparison/directory",
+        "Information/data assets"
+      ],
+      "output": "Ranked evidence-backed candidates with explicit money mechanism and traffic route."
+    },
+    {
+      "priority": 2,
+      "task": "For each candidate, identify the exact user moment and current workaround.",
+      "output": "Proof that the project solves or captures an existing behaviour."
+    },
+    {
+      "priority": 3,
+      "task": "Assess competitors and identify whether a real gap exists.",
+      "output": "Reason to build rather than copy."
+    },
+    {
+      "priority": 4,
+      "task": "Estimate a smallest real-world test.",
+      "output": "A V1 experiment designed to prove or disprove the revenue theory quickly."
+    }
+  ],
+  "retrieval_tags": [
+    "umbrella",
+    "branded",
+    "unbranded",
+    "project-selection",
+    "project-1",
+    "revenue",
+    "traffic",
+    "automation",
+    "lead-generation",
+    "affiliate",
+    "advertising",
+    "directory",
+    "comparison",
+    "utility",
+    "data-asset",
+    "specflow",
+    "buildalong",
+    "lessons",
+    "rejected-patterns",
+    "research-protocol"
   ]
 }
