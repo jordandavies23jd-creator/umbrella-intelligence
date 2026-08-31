@@ -503,5 +503,241 @@
       ],
       "guardrail": "Every serious candidate should be compared against opportunities from other revenue mechanisms before commitment. A clever or useful idea does not receive preference merely because it is a product we can build."
     }
-  ]
+  ],
+  "governance": {
+    "source_of_truth": "Umbrella Intelligence is the current strategic source of truth. Historical decisions remain recorded, but superseded decisions must never be treated as active.",
+    "hierarchy": [
+      "Mission and non-negotiable principles",
+      "Active strategic rules",
+      "Weighted decision framework",
+      "Project-specific constraints",
+      "Experiments and evidence",
+      "Ideas and hypotheses"
+    ],
+    "conflict_resolution": [
+      "A higher-level active rule overrides a lower-level rule.",
+      "Specific rules only override general rules when explicitly marked project-specific.",
+      "New evidence can supersede a rule only through an explicit decision record.",
+      "Historical statements are never silently deleted; they are marked superseded or historical.",
+      "If two active rules conflict, the conflict must be flagged as an open decision before further recommendation relies on either."
+    ],
+    "statuses": [
+      "active",
+      "hypothesis",
+      "testing",
+      "parked",
+      "rejected",
+      "superseded",
+      "historical"
+    ],
+    "maintenance_rule": "After each material decision, research finding, experiment result or project pivot, update the appropriate record and check it against active higher-level rules."
+  },
+  "active_principles": [
+    {
+      "id": "P01",
+      "priority": "critical",
+      "status": "active",
+      "rule": "Revenue opportunity first; product format second.",
+      "meaning": "Start from the strongest realistic route to revenue and asset value, then determine whether the vehicle should be a website, app, digital product, marketplace, service, acquisition or another asset."
+    },
+    {
+      "id": "P02",
+      "priority": "critical",
+      "status": "active",
+      "rule": "Do not constrain opportunity research to problem-solving products.",
+      "meaning": "Problem-solving SaaS or apps are one revenue route, not the default answer."
+    },
+    {
+      "id": "P03",
+      "priority": "critical",
+      "status": "active",
+      "rule": "Compare revenue mechanisms before committing.",
+      "meaning": "Serious candidates must be compared against opportunities from other revenue mechanisms rather than only against similar products."
+    },
+    {
+      "id": "P04",
+      "priority": "critical",
+      "status": "active",
+      "rule": "Evidence beats elegance.",
+      "meaning": "Useful, clever or technically impressive ideas receive no preference unless demand, monetisation, distribution and competition evidence justify them."
+    },
+    {
+      "id": "P05",
+      "priority": "high",
+      "status": "active",
+      "rule": "Build, test, learn and update.",
+      "meaning": "Early projects should create real-world evidence and feed validated lessons back into Umbrella Intelligence."
+    },
+    {
+      "id": "P06",
+      "priority": "high",
+      "status": "active",
+      "rule": "Do not restart research from zero.",
+      "meaning": "Check active decisions, prior evidence, lessons, rejected paths and research gaps before beginning new investigation."
+    },
+    {
+      "id": "P07",
+      "priority": "high",
+      "status": "active",
+      "rule": "Avoid sunk-cost commitment.",
+      "meaning": "Time spent researching or building does not make an idea more deserving of continuation."
+    },
+    {
+      "id": "P08",
+      "priority": "high",
+      "status": "active",
+      "rule": "Project 1 is an experiment in creating and operating a revenue-producing asset.",
+      "meaning": "Its first purpose is to reach real revenue and generate reusable learning; sophistication is secondary."
+    },
+    {
+      "id": "P09",
+      "priority": "medium",
+      "status": "active",
+      "rule": "Portfolio branding does not determine opportunity selection.",
+      "meaning": "A project may belong to The Branded or The Unbranded without changing its commercial assessment."
+    },
+    {
+      "id": "P10",
+      "priority": "medium",
+      "status": "active",
+      "rule": "Maintain projects according to weighted portfolio value, not equal rules.",
+      "meaning": "Revenue, growth potential, maintenance burden, learning value, strategic fit and sale value should be weighted rather than treated equally."
+    }
+  ],
+  "revenue_mechanisms": [
+    {
+      "rank": 1,
+      "name": "Existing money flows",
+      "description": "Capture, redirect or participate in money already moving."
+    },
+    {
+      "rank": 2,
+      "name": "Buy/build/improve assets",
+      "description": "Acquire or cheaply create assets, improve revenue or value, then hold or sell."
+    },
+    {
+      "rank": 3,
+      "name": "Transaction participation",
+      "description": "Commission, referral, brokerage or marketplace economics."
+    },
+    {
+      "rank": 4,
+      "name": "Proven-demand digital products",
+      "description": "Sell low-cost digital outputs into existing demand."
+    },
+    {
+      "rank": 5,
+      "name": "Traffic and attention assets",
+      "description": "Acquire repeat attention and monetise through ads, affiliates, sponsorship or owned offers."
+    },
+    {
+      "rank": 6,
+      "name": "Operational arbitrage",
+      "description": "Deliver an outcome more efficiently than the price paid by the customer."
+    },
+    {
+      "rank": 7,
+      "name": "Problem-solving software",
+      "description": "SaaS, apps or tools that earn through subscriptions, transactions or other models."
+    }
+  ],
+  "decision_records": [
+    {
+      "id": "D01",
+      "status": "accepted",
+      "impact": "critical",
+      "decision": "Project 1 research is revenue-mechanism-first.",
+      "rationale": "Avoid bias toward building software and compare easier routes to revenue.",
+      "supersedes": [],
+      "applies_to": [
+        "Project 1",
+        "future portfolio selection"
+      ]
+    },
+    {
+      "id": "D02",
+      "status": "accepted",
+      "impact": "critical",
+      "decision": "No automatic preference for problem-solving products.",
+      "rationale": "Useful products can have weak revenue, while non-problem products may capture stronger existing money flows.",
+      "supersedes": [
+        "Earlier implicit product-first framing"
+      ],
+      "applies_to": [
+        "Project 1 research"
+      ]
+    },
+    {
+      "id": "D03",
+      "status": "accepted",
+      "impact": "high",
+      "decision": "SpecFlow is parked rather than treated as Project 1.",
+      "rationale": "Buildability and usefulness did not sufficiently prove revenue potential.",
+      "supersedes": [
+        "SpecFlow as default first revenue project"
+      ],
+      "applies_to": [
+        "SpecFlow",
+        "Project 1"
+      ]
+    },
+    {
+      "id": "D04",
+      "status": "accepted",
+      "impact": "high",
+      "decision": "Property is a candidate territory, not an assumed Project 1 destination.",
+      "rationale": "The revenue model may be attractive but the industry was narrowed too early.",
+      "supersedes": [
+        "Implicit property-first direction"
+      ],
+      "applies_to": [
+        "Project 1 territory search"
+      ]
+    }
+  ],
+  "contradiction_audit": {
+    "date": "2026-08-31",
+    "result": "Resolved",
+    "findings": [
+      {
+        "old_pattern": "Start by finding a problem to solve.",
+        "status": "superseded",
+        "replacement": "Start by comparing realistic revenue mechanisms and existing value flows."
+      },
+      {
+        "old_pattern": "Free useful tool -> monetise afterwards as the default model.",
+        "status": "superseded",
+        "replacement": "Free tools are one option; Project 1 may instead sell, broker, acquire, improve, transact or arbitrage."
+      },
+      {
+        "old_pattern": "Property is the leading destination.",
+        "status": "testing",
+        "replacement": "Property remains a candidate territory only."
+      },
+      {
+        "old_pattern": "Every project should visibly carry the umbrella identity.",
+        "status": "superseded",
+        "replacement": "Projects are assessed commercially first and can belong to The Branded or The Unbranded."
+      },
+      {
+        "old_pattern": "SpecFlow is the first project to push forward.",
+        "status": "superseded",
+        "replacement": "SpecFlow is parked pending stronger revenue evidence."
+      }
+    ],
+    "no_unresolved_active_conflicts": true
+  },
+  "database_map": {
+    "00-governance": "Hierarchy, statuses and conflict resolution",
+    "01-active-principles": "Rules currently governing decisions",
+    "02-decision-records": "Why significant decisions were made and what they superseded",
+    "03-mission-and-weights": "Portfolio objective and weighted assessment",
+    "04-revenue-mechanisms": "Opportunity search universe",
+    "05-projects": "Project status, history and constraints",
+    "06-opportunity-fields": "Territories under investigation",
+    "07-evidence-and-research": "Findings, gaps and validation",
+    "08-lessons": "Validated reusable learning",
+    "09-rejected-and-parked": "Dead ends and revisit triggers",
+    "10-intelligence-inbox": "Unvalidated incoming information awaiting promotion"
+  }
 }
