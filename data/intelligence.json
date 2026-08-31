@@ -400,7 +400,11 @@
     "drainage",
     "specialist-surveys",
     "renovation-compliance",
-    "survey-decoder"
+    "survey-decoder",
+    "revenue-first",
+    "no-problem-solver-bias",
+    "revenue-mechanisms",
+    "project-selection-principle"
   ],
   "research_log": [
     {
@@ -481,6 +485,23 @@
       "why": "Users already have an expensive purchase underway and are close to spending money.",
       "risk": "Document parsing quality and safety; should initially classify survey recommendations rather than diagnose the property.",
       "score_status": "Strategic candidate"
+    }
+  ],
+  "project_selection_principles": [
+    {
+      "priority": "critical",
+      "rule": "Do not constrain opportunity research to problem-solving products.",
+      "meaning": "Project 1 research must begin with the objective of finding the strongest realistic route to revenue and asset value, not with an assumption that the answer must be an app, SaaS, useful tool, or problem solver.",
+      "search_order": [
+        "Existing money flows we can capture or redirect",
+        "Assets we can buy or build cheaply and improve",
+        "Transactions where commission, referral or brokerage revenue is possible",
+        "Digital products with proven existing demand",
+        "Traffic or attention assets with realistic monetisation",
+        "Operational arbitrage and productised delivery",
+        "Problem-solving apps or SaaS"
+      ],
+      "guardrail": "Every serious candidate should be compared against opportunities from other revenue mechanisms before commitment. A clever or useful idea does not receive preference merely because it is a product we can build."
     }
   ]
 }
