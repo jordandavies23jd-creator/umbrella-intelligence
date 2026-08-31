@@ -131,7 +131,8 @@
         "Traffic alone is not enough; the path from activity to revenue must be explicit.",
         "Do not choose an idea simply because it is easy to build.",
         "Do not choose an idea simply because it matches a familiar trade or industry."
-      ]
+      ],
+      "current_stage": "Narrow niche validation. Broad opportunity models remain open; generic heat-pump grant tools and generic car fault-code lookups have been deprioritised due to visible competition."
     },
     {
       "id": "umbrella-intelligence",
@@ -388,6 +389,45 @@
     "buildalong",
     "lessons",
     "rejected-patterns",
-    "research-protocol"
+    "research-protocol",
+    "competition",
+    "niche-validation",
+    "heat-pump",
+    "automotive",
+    "research-log"
+  ],
+  "research_log": [
+    {
+      "date": "2026-08-31",
+      "round": "Project 1 – first niche validation pass",
+      "question": "Can high-intent free tools and lead-generation assets produce stronger Project 1 candidates than generic software?",
+      "findings": [
+        {
+          "candidate": "Generic UK heat-pump / grant eligibility checker",
+          "verdict": "Too crowded as a default Project 1 choice",
+          "evidence": "Multiple dedicated checkers, calculators and installer lead funnels already exist; recent government grant changes create demand but also attract fast competition.",
+          "implication": "Do not build a generic checker. Only revisit if a narrow underserved audience or distribution advantage is identified."
+        },
+        {
+          "candidate": "Generic UK car fault-code lookup",
+          "verdict": "Too crowded as a default",
+          "evidence": "Large free code libraries and several newer UK-focused explainers already cover plain-English code meanings, costs and repair guidance.",
+          "implication": "A simple code database is not enough. A future automotive asset would need a stronger data, workflow or transaction layer."
+        },
+        {
+          "candidate": "High-intent service lead generation",
+          "verdict": "Still attractive at the model level",
+          "evidence": "Current lead-generation reporting and UK service advertising benchmarks indicate that qualified service enquiries have measurable commercial value, while users can receive the service for free.",
+          "implication": "Continue niche-by-niche research rather than abandoning the model."
+        },
+        {
+          "candidate": "Generic comparison sites",
+          "verdict": "Potentially attractive but niche selection is decisive",
+          "evidence": "Comparison and broker sites already compete heavily in obvious verticals such as business energy.",
+          "implication": "Avoid entering broad established comparison markets without a sharply differentiated user problem."
+        }
+      ],
+      "new_rule": "A current trend or new government incentive is not enough by itself. We must separately prove demand, monetisation and that the exact version we build is not already commoditised."
+    }
   ]
 }
