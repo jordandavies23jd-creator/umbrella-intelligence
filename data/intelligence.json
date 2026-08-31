@@ -394,7 +394,13 @@
     "niche-validation",
     "heat-pump",
     "automotive",
-    "research-log"
+    "research-log",
+    "project-1-candidates",
+    "property-risk",
+    "drainage",
+    "specialist-surveys",
+    "renovation-compliance",
+    "survey-decoder"
   ],
   "research_log": [
     {
@@ -428,6 +434,53 @@
         }
       ],
       "new_rule": "A current trend or new government incentive is not enough by itself. We must separately prove demand, monetisation and that the exact version we build is not already commoditised."
+    }
+  ],
+  "project_1_candidates": [
+    {
+      "rank": 1,
+      "name": "Pre-Purchase Property Risk Checker",
+      "one_line": "A free address-based checker that tells a UK buyer which specialist property checks are worth considering before exchange, then earns from introductions to relevant surveyors.",
+      "revenue": "Qualified surveyor introductions, pay-per-lead, affiliate/referral agreements.",
+      "why": "One user can create multiple high-value downstream services; the product can start narrow and expand into a property-intelligence asset.",
+      "risk": "Property data accuracy and strong comparison-site competition; must begin with a narrow, useful decision layer rather than pretending to be a full legal search.",
+      "score_status": "Lead candidate"
+    },
+    {
+      "rank": 2,
+      "name": "Build-Over & Drain Risk Checker",
+      "one_line": "A free postcode-and-project checker for homeowners planning extensions who need to understand whether public sewers or drainage constraints could affect the build, with routes to surveys and specialist help.",
+      "revenue": "Drainage survey and specialist introductions.",
+      "why": "Clear project trigger, high commercial intent, and a concrete next action.",
+      "risk": "Water-company rules and maps vary; exact property-level answers require careful data handling.",
+      "score_status": "Lead candidate"
+    },
+    {
+      "rank": 3,
+      "name": "Specialist Survey Decision Tool",
+      "one_line": "A guided free tool for UK home buyers that converts visible property concerns and survey findings into a prioritised answer about whether a roof, damp, drainage, structural, asbestos or other specialist survey is worth getting.",
+      "revenue": "Introductions to specialist surveyors.",
+      "why": "The decision problem is broader and more useful than a single quote form and can create multiple monetisable outcomes.",
+      "risk": "Must avoid giving professional diagnoses; start with clear guidance and evidence-backed triggers.",
+      "score_status": "Lead candidate"
+    },
+    {
+      "rank": 4,
+      "name": "Renovation Compliance & Requirements Checker",
+      "one_line": "Enter an address and planned works to receive a plain-English checklist of likely permissions, constraints and specialist checks before spending money.",
+      "revenue": "Introductions to surveyors, designers, specialists and relevant services.",
+      "why": "Large umbrella opportunity with many possible revenue branches and strong learning value.",
+      "risk": "Broad scope and fragmented official data; must start with one tightly defined renovation journey.",
+      "score_status": "Strategic candidate"
+    },
+    {
+      "rank": 5,
+      "name": "Home Survey Follow-Up Decoder",
+      "one_line": "Upload or paste the recommendations from a home survey and receive a structured list of what needs a specialist follow-up, what is urgent, and what type of professional to contact.",
+      "revenue": "Qualified introductions to surveyors and specialists.",
+      "why": "Users already have an expensive purchase underway and are close to spending money.",
+      "risk": "Document parsing quality and safety; should initially classify survey recommendations rather than diagnose the property.",
+      "score_status": "Strategic candidate"
     }
   ]
 }
