@@ -1,30 +1,65 @@
 "use client";
+import { useMemo, useState } from "react";
+import intelligence from "../data/intelligence.json";
 
-const projects=[
- {name:"SpecFlow",status:"Parked",score:"42",desc:"Website specification generator. The basic generator was not strong enough for our revenue criteria; the stronger future hypothesis is scope and requirement intelligence.",revisit:"Revisit when strong evidence of paid scope-risk demand or a clear alternative revenue mechanism appears."},
- {name:"Project 1 Search",status:"Active",score:"Research",desc:"Find the best first revenue-producing digital asset without limiting ourselves to SaaS or direct customer payments.",revisit:"Current focus: high-intent demand, clear monetisation, automation and fast testing."},
- {name:"Umbrella Intelligence",status:"Foundation",score:"Live",desc:"The internal memory and decision system designed to stop circular research and make each project improve the next.",revisit:"V1 records the intelligence; future versions should improve retrieval and evidence tracking."}
-];
-const lessons=[
- ["Buildability is not viability","SpecFlow was easy to build, but that alone did not prove that it had a strong route to revenue."],
- ["Revenue comes before attachment","A project can be parked or killed when evidence weakens, regardless of work already invested."],
- ["Direct payment is not required","Projects may earn through advertising, affiliate revenue, lead generation, sales or other mechanisms."],
- ["Existing demand is valuable","Prefer capturing an existing need over trying to persuade people to adopt a new behaviour."],
- ["Research should compound","Check existing intelligence, research only gaps, then store the result and update the decision."]
-];
-const opportunities=[
- ["High-intent lead generation","Visitor already needs a service; revenue can come from qualified leads or referrals.","Very high"],
- ["Free utility → revenue engine","Immediate free value with affiliate, referral, advertising or lead monetisation.","Very high"],
- ["Niche comparison / directory","Help users choose between options; monetise intent and visibility.","High"],
- ["Automated information/data asset","Organise useful data into a searchable asset that can attract recurring traffic.","High"]
-];
-export default function Home(){return <main className="shell">
- <header className="top"><div className="brand"><div className="mark">U</div><div><h1>Umbrella Intelligence</h1><p>Every project should make the next decision smarter.</p></div></div><div className="status">● Intelligence foundation active</div></header>
- <div className="grid"><aside className="sidebar"><div className="nav active"><span>⌂</span>Overview</div><div className="nav"><span>◈</span>Projects</div><div className="nav"><span>⌕</span>Research</div><div className="nav"><span>◉</span>Opportunities</div><div className="nav"><span>⚑</span>Decisions</div><div className="nav"><span>✦</span>Lessons</div><div className="nav"><span>⌁</span>Parked / Rejected</div></aside>
- <section className="main"><div className="hero"><div className="eyebrow">Umbrella foundation · v1</div><h2>We are not collecting notes. We are building usable intelligence.</h2><p>Before future umbrella decisions are made: retrieve what we already know, identify the gaps, research only what is missing, then store the evidence and update the decision.</p></div>
- <div className="stats"><div className="card stat"><div className="num">3</div><div className="label">Recorded projects</div></div><div className="card stat"><div className="num">5</div><div className="label">Core lessons</div></div><div className="card stat"><div className="num">4</div><div className="label">Opportunity directions</div></div><div className="card stat"><div className="num">1</div><div className="label">Active project search</div></div></div>
- <div className="section-title"><h3>Project memory</h3><span className="hint">The first intelligence records</span></div><div className="projects">{projects.map(p=><article className="card project" key={p.name}><span className="pill">{p.status}</span><h4>{p.name}</h4><p>{p.desc}</p><div className="meta"><span>{p.revisit}</span><span className="score">{p.score}</span></div></article>)}</div>
- <div className="two"><div><div className="section-title"><h3>Compounding lessons</h3><span className="hint">Rules future projects inherit</span></div><div className="card">{lessons.map(([t,d])=><div className="item" key={t}><strong>{t}</strong><p>{d}</p></div>)}</div></div><div><div className="section-title"><h3>Current opportunity field</h3><span className="hint">Not decisions yet</span></div><div className="card">{opportunities.map(([t,d,s])=><div className="item" key={t}><strong>{t}</strong><p>{d}</p><span className="score">{s}</span></div>)}</div></div></div>
- <div className="section-title"><h3>Decision protocol</h3><span className="hint">The rule that stops circular research</span></div><div className="card rules"><div className="rule"><div className="dot"></div><div><strong>Retrieve</strong> — check relevant existing intelligence before making a recommendation.</div></div><div className="rule"><div className="dot"></div><div><strong>Gap check</strong> — identify what we genuinely do not know.</div></div><div className="rule"><div className="dot"></div><div><strong>Research</strong> — investigate the missing evidence rather than restarting from generic idea lists.</div></div><div className="rule"><div className="dot"></div><div><strong>Store</strong> — record the evidence, confidence, decision impact and lessons.</div></div><div className="rule"><div className="dot"></div><div><strong>Decide</strong> — update the project assessment using accumulated intelligence, not attachment.</div></div></div>
- <p className="footer-note">Umbrella Intelligence V1 · Internal foundation for the project portfolio</p>
- </section></div></main>}
+type Tab = "Overview"|"Projects"|"Opportunities"|"Lessons"|"Avoid"|"Research";
+
+export default function Home(){
+ const [tab,setTab]=useState<Tab>("Overview");
+ const [query,setQuery]=useState("");
+ const allText=JSON.stringify(intelligence).toLowerCase();
+ const hasQuery=query.trim().length>1;
+ const searchResult=useMemo(()=>hasQuery && allText.includes(query.toLowerCase()),[query,allText,hasQuery]);
+ const nav:Tab[]=["Overview","Projects","Opportunities","Lessons","Avoid","Research"];
+ return <main className="shell">
+  <header className="top">
+   <div className="brand"><div className="mark">U</div><div><h1>Umbrella Intelligence</h1><p>Persistent project intelligence · every decision starts ahead of the last one.</p></div></div>
+   <div className="status">● V1 intelligence seeded</div>
+  </header>
+
+  <div className="grid">
+   <aside className="sidebar">
+    <div className="search"><span>⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search intelligence..." /></div>
+    {nav.map(n=><button key={n} className={"nav "+(tab===n?"active":"")} onClick={()=>setTab(n)}>{n}</button>)}
+   </aside>
+
+   <section className="main">
+    {hasQuery && <div className={"searchBanner "+(searchResult?"found":"")}><strong>{searchResult?"Relevant intelligence exists":"No exact match in current seed intelligence"}</strong><span>{searchResult?"Use this as a prompt to retrieve the relevant record before researching again.":"This may be a genuine research gap worth investigating."}</span></div>}
+
+    {tab==="Overview" && <Overview setTab={setTab}/>}
+    {tab==="Projects" && <Projects/>}
+    {tab==="Opportunities" && <Opportunities/>}
+    {tab==="Lessons" && <Lessons/>}
+    {tab==="Avoid" && <Avoid/>}
+    {tab==="Research" && <Research/>}
+   </section>
+  </div>
+ </main>
+}
+
+function Overview({setTab}:{setTab:(t:Tab)=>void}){
+ return <>
+  <div className="hero"><div className="eyebrow">Umbrella operating intelligence</div><h2>Not a notebook. A decision system.</h2><p>Its job is to stop circular research: retrieve what we already know, identify evidence gaps, research only the gaps, store the result and update the decision without attachment.</p><div className="heroActions"><button onClick={()=>setTab("Research")}>View research queue</button><button className="ghost" onClick={()=>setTab("Opportunities")}>Explore opportunity fields</button></div></div>
+  <div className="stats">
+   <Stat n={intelligence.projects.length} l="Project records"/>
+   <Stat n={intelligence.confirmed_lessons.length} l="Inherited lessons"/>
+   <Stat n={intelligence.opportunity_fields.length} l="Opportunity fields"/>
+   <Stat n="30%" l="Revenue potential weighting"/>
+  </div>
+  <div className="section-title"><h3>Current mission</h3><span className="hint">What Project 1 is actually trying to achieve</span></div>
+  <div className="card mission"><strong>{intelligence.mission.current}</strong><p>{intelligence.mission.preferred_outcome}</p><div className="chips">{intelligence.mission.not_required.map(x=><span key={x}>{x}</span>)}</div></div>
+  <div className="two">
+   <div><div className="section-title"><h3>Decision protocol</h3></div><div className="card">{intelligence.decision_protocol.map((x,i)=><div className="step" key={x}><b>{i+1}</b><span>{x}</span></div>)}</div></div>
+   <div><div className="section-title"><h3>Weighted assessment</h3></div><div className="card">{intelligence.weighted_assessment.factors.map(f=><div className="weight" key={f.name}><span>{f.name}</span><b>{f.weight}%</b></div>)}</div></div>
+  </div>
+ </>
+}
+function Stat({n,l}:{n:number|string,l:string}){return <div className="card stat"><div className="num">{n}</div><div className="label">{l}</div></div>}
+function Projects(){return <><Title title="Project memory" hint="Hypotheses, decisions, status and lessons survive the project"/><div className="projectStack">{intelligence.projects.map((p:any)=><article className="card record" key={p.id}><div className="recordHead"><div><span className="pill">{p.status}</span><h3>{p.name}</h3></div><span className="sectionTag">{p.section}</span></div>{p.objective&&<Block title="Objective" text={p.objective}/>} {p.original_hypothesis&&<Block title="Original hypothesis" text={p.original_hypothesis}/>} {p.revenue_assessment&&<Block title="Revenue assessment" text={p.revenue_assessment}/>} {p.stronger_hypothesis&&<Block title="Stronger future hypothesis" text={p.stronger_hypothesis}/>} {p.strategic_role&&<Block title="Strategic role" text={p.strategic_role}/>} {p.current_position&&<Block title="Current position" text={p.current_position}/>} {p.lessons&&<List title="Inherited lessons" items={p.lessons}/>} {p.revisit_triggers&&<List title="Revisit triggers" items={p.revisit_triggers}/>} {p.selection_rules&&<List title="Selection rules" items={p.selection_rules}/>}</article>)}</div></>}
+function Opportunities(){return <><Title title="Opportunity fields" hint="These are research fields, not chosen projects"/><div className="opGrid">{intelligence.opportunity_fields.map((o:any)=><article className="card opportunity" key={o.id}><span className="pill blue">{o.current_assessment}</span><h3>{o.name}</h3><p>{o.model}</p><List title="Revenue mechanisms" items={o.revenue}/><List title="Strengths" items={o.strengths}/><List title="Risks to prove against" items={o.risks}/></article>)}</div></>}
+function Lessons(){return <><Title title="Compounding lessons" hint="These should actively influence future recommendations"/><div className="card">{intelligence.confirmed_lessons.map((l:any)=><div className="item" key={l.title}><strong>{l.title}</strong><p>{l.detail}</p></div>)}</div><div className="section-title"><h3>Umbrella structure</h3><span className="hint">How portfolio identity is handled</span></div><div className="two"><div className="card"><h3>The Branded</h3><p>{intelligence.umbrella_model.sections.branded}</p></div><div className="card"><h3>The Unbranded</h3><p>{intelligence.umbrella_model.sections.unbranded}</p></div></div><div className="card listCard"><List title="Portfolio rules" items={intelligence.umbrella_model.rules}/></div></>}
+function Avoid(){return <><Title title="Rejected & parked patterns" hint="Knowledge that prevents us walking back into the same dead ends"/><div className="card">{intelligence.rejected_or_parked_patterns.map((x:any)=><div className="item" key={x.pattern}><div className="avoidHead"><strong>{x.pattern}</strong><span className="pill red">{x.status}</span></div><p>{x.reason}</p></div>)}</div></>}
+function Research(){return <><Title title="Active research queue" hint="The next evidence gaps — not another generic idea hunt"/><div className="queue">{intelligence.research_queue.map((q:any)=><article className="card queueItem" key={q.priority}><div className="queueNo">{q.priority}</div><div><h3>{q.task}</h3><p><strong>Target fields:</strong> {q.target_fields.join(" · ")}</p><p><strong>Required output:</strong> {q.output}</p></div></article>)}</div><div className="section-title"><h3>Research rule</h3></div><div className="card callout"><strong>Do not start with “What can we build?”</strong><p>Start with the intelligence we already have, then ask what evidence is missing about demand, traffic, competition, monetisation and automation.</p></div></>}
+function Title({title,hint}:{title:string,hint:string}){return <div className="section-title big"><div><h2>{title}</h2><span className="hint">{hint}</span></div></div>}
+function Block({title,text}:{title:string,text:string}){return <div className="block"><strong>{title}</strong><p>{text}</p></div>}
+function List({title,items}:{title:string,items:string[]}){return <div className="list"><strong>{title}</strong><ul>{items.map(i=><li key={i}>{i}</li>)}</ul></div>}
