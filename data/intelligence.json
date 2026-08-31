@@ -1,0 +1,114 @@
+{
+  "version": "1.0",
+  "purpose": "Compounding decision intelligence for the Umbrella project portfolio.",
+  "decision_protocol": [
+    "Retrieve existing intelligence",
+    "Identify gaps",
+    "Research only missing evidence",
+    "Store findings with confidence and decision impact",
+    "Update decision without attachment"
+  ],
+  "projects": [
+    {
+      "id": "specflow",
+      "name": "SpecFlow",
+      "status": "parked",
+      "hypothesis": "A tool for web professionals to turn client discovery information into clear project specifications.",
+      "revenue_assessment": "Basic questionnaire-to-specification generation did not provide enough evidence of strong revenue viability.",
+      "stronger_hypothesis": "Website project scope and requirement intelligence that detects missing requirements, contradictions and scope risks before quoting or building.",
+      "lessons": [
+        "Buildability is not viability",
+        "A document generator is easily substituted by existing tools and AI",
+        "The intelligence layer is more valuable than the formatting output"
+      ],
+      "revisit_triggers": [
+        "Strong evidence that agencies will pay to reduce scope risk",
+        "A compelling non-subscription revenue mechanism",
+        "A clear distribution advantage"
+      ]
+    },
+    {
+      "id": "project-1",
+      "name": "Project 1 Search",
+      "status": "active",
+      "objective": "Find a revenue-producing digital project with the strongest realistic odds of earning, without limiting revenue to direct customer payment.",
+      "priorities": [
+        [
+          "Revenue potential",
+          1
+        ],
+        [
+          "Speed to first revenue",
+          2
+        ],
+        [
+          "Automation potential",
+          3
+        ],
+        [
+          "Traffic or demand potential",
+          4
+        ],
+        [
+          "Scalability",
+          5
+        ],
+        [
+          "Startup cost",
+          6
+        ],
+        [
+          "Learning value",
+          7
+        ]
+      ]
+    }
+  ],
+  "lessons": [
+    "Revenue creation is the goal; direct customer payment is optional.",
+    "Existing demand is generally preferable to manufacturing demand.",
+    "A project needs an identifiable money mechanism before serious development.",
+    "Projects should be easy to test and easy to park or kill.",
+    "Research should compound instead of restarting from generic idea lists."
+  ],
+  "opportunity_fields": [
+    {
+      "name": "High-intent lead generation",
+      "mechanisms": [
+        "lead sales",
+        "referrals"
+      ],
+      "status": "researching"
+    },
+    {
+      "name": "Free useful tool",
+      "mechanisms": [
+        "affiliate",
+        "referral",
+        "advertising",
+        "leads"
+      ],
+      "status": "researching"
+    },
+    {
+      "name": "Niche comparison or directory",
+      "mechanisms": [
+        "affiliate",
+        "featured listings",
+        "advertising",
+        "leads"
+      ],
+      "status": "researching"
+    },
+    {
+      "name": "Automated information or data asset",
+      "mechanisms": [
+        "advertising",
+        "affiliate",
+        "referral",
+        "data products"
+      ],
+      "status": "researching"
+    }
+  ]
+}
