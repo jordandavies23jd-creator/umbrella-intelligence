@@ -758,6 +758,18 @@
   ],
   "decision_records": [
     {
+      "id": "D08",
+      "status": "proposed",
+      "impact": "high",
+      "decision": "Use a three-experiment Project 0 portfolio before committing significant build effort to Project 1.",
+      "rationale": "The current evidence gap is comparative real-world performance across distribution and monetisation mechanisms. Three minimal experiments provide faster learning than debating one theoretical winner.",
+      "supersedes": [],
+      "applies_to": [
+        "Project 0",
+        "future Project 1 selection"
+      ]
+    },
+    {
       "id": "D07",
       "status": "testing",
       "impact": "critical",
@@ -1419,5 +1431,67 @@
       ],
       "decision": "D06"
     }
+  },
+  "project_zero": {
+    "status": "proposed",
+    "purpose": "Run small, low-cost revenue experiments that answer high-value questions for future project selection.",
+    "rules": [
+      "Each experiment must have a real monetisation path.",
+      "Each must test a different major uncertainty.",
+      "Do not optimise for perfection before first live data.",
+      "Record traffic, acquisition source, conversion steps, revenue, cost and maintenance.",
+      "Kill or scale based on pre-defined evidence rather than attachment."
+    ],
+    "experiments": [
+      {
+        "id": "P0-A",
+        "name": "One-Job Tool Hire Finder",
+        "mechanism": "affiliate transaction capture",
+        "hypothesis": "A narrow decision tool can turn project intent into monetised equipment-hire transactions.",
+        "v1": "User selects one job type, project duration and basic conditions; tool outputs the likely equipment category and routes to hire partners.",
+        "why": "HSS DIY publicly offers 4% commission on validated hire and buy transactions, with a 30-day cookie and stated £90–£95 average order value.",
+        "learns": [
+          "high-intent traffic acquisition",
+          "tool completion",
+          "affiliate click-through",
+          "transaction conversion"
+        ],
+        "success_signal": "At least one attributable transaction or strong evidence of qualified click-through from initial targeted traffic.",
+        "build_scope": "1 focused landing flow, not a full marketplace."
+      },
+      {
+        "id": "P0-B",
+        "name": "UK Trade Paperwork Micro-Pack",
+        "mechanism": "direct digital sale",
+        "hypothesis": "A narrowly targeted workflow pack can generate direct customer revenue with minimal fulfilment cost.",
+        "v1": "One sharply scoped pack for a single recurring UK trade workflow rather than a generic bundle.",
+        "why": "Current marketplace listings demonstrate priced trade-document demand, while direct digital delivery creates almost no marginal fulfilment work.",
+        "learns": [
+          "direct willingness to pay",
+          "pricing",
+          "landing-page conversion",
+          "distribution without SEO dependence"
+        ],
+        "success_signal": "First independent sale from a non-personal buyer; then measure refund/support burden.",
+        "build_scope": "One product, one buyer, one checkout."
+      },
+      {
+        "id": "P0-C",
+        "name": "Vertical Local Lead Page",
+        "mechanism": "qualified lead generation",
+        "hypothesis": "A narrowly defined local service intent can be converted into a sellable enquiry before building a large marketplace.",
+        "v1": "One location + one urgent/high-value service + one simple quote/request flow; partner supply arranged before paid scaling.",
+        "why": "2026 UK trade marketing data indicates material customer-acquisition costs and job values in specialist local services, supporting a real market for qualified enquiries.",
+        "learns": [
+          "local demand acquisition",
+          "lead quality",
+          "provider willingness to pay",
+          "speed-to-response impact"
+        ],
+        "success_signal": "One validated enquiry accepted by a provider or a paid pilot lead.",
+        "build_scope": "Single geography and vertical, not nationwide."
+      }
+    ],
+    "selection_note": "P0-A, P0-B and P0-C deliberately test transaction, direct-sale and lead-generation mechanisms. The goal is comparative learning plus possible revenue, not building three permanent companies."
   }
 }
