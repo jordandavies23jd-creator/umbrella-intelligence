@@ -864,7 +864,13 @@
     "07-evidence-and-research": "Findings, gaps and validation",
     "08-lessons": "Validated reusable learning",
     "09-rejected-and-parked": "Dead ends and revisit triggers",
-    "10-intelligence-inbox": "Unvalidated incoming information awaiting promotion"
+    "10-intelligence-inbox": "Unvalidated incoming information awaiting promotion",
+    "07-evidence-ledger": "Source-level evidence and reliability",
+    "08-findings": "What evidence means and how it changes decisions",
+    "09-lessons": "Validated reusable learning",
+    "10-rejected-and-parked": "Dead ends and revisit triggers",
+    "11-intelligence-inbox": "Unvalidated incoming information awaiting promotion",
+    "12-research-traceability": "Evidence → finding → candidate → decision → result → lesson"
   },
   "project_1_shortlist": [
     {
@@ -899,5 +905,267 @@
       "status": "challenger",
       "confidence": "provisional"
     }
-  ]
+  ],
+  "research_system": {
+    "purpose": "Preserve useful research without turning Umbrella Intelligence into an unsearchable dump.",
+    "flow": [
+      "evidence",
+      "finding",
+      "candidate assessment",
+      "decision",
+      "experiment result",
+      "lesson"
+    ],
+    "promotion_rules": [
+      "Raw evidence is not automatically a conclusion.",
+      "A finding must identify what the evidence changes or supports.",
+      "Candidate assessments must record risks and assumptions, not just strengths.",
+      "Important decisions must link back to supporting findings.",
+      "Real-world experiment results can strengthen, weaken or supersede prior research.",
+      "A lesson is only promoted to confirmed when supported by repeated evidence or a sufficiently decisive real-world result."
+    ],
+    "evidence_fields": [
+      "id",
+      "date",
+      "topic",
+      "claim",
+      "source_name",
+      "source_url",
+      "source_type",
+      "evidence_type",
+      "reliability",
+      "status",
+      "supports",
+      "notes"
+    ],
+    "statuses": [
+      "captured",
+      "reviewed",
+      "supported",
+      "contested",
+      "superseded",
+      "archived"
+    ],
+    "storage_rule": "Store source-level evidence when it materially affects a candidate, decision, score, kill criterion or reusable lesson. Store summaries for low-impact background research."
+  },
+  "evidence_ledger": [
+    {
+      "id": "E001",
+      "date": "2026-09-01",
+      "topic": "Skip-hire affiliate economics",
+      "claim": "A published affiliate programme states 10% commission on net revenue from qualifying skip-hire orders and provides partner reporting.",
+      "source_name": "Skip Hire Comparison – Affiliate Terms",
+      "source_url": "https://skiphirecomparison.co.uk/legal/affiliates-terms-and-conditions",
+      "source_type": "commercial partner terms",
+      "evidence_type": "primary commercial evidence",
+      "reliability": "medium-high",
+      "status": "captured",
+      "supports": [
+        "F001",
+        "C001"
+      ],
+      "notes": "Must be revalidated before launch because partner terms can change."
+    },
+    {
+      "id": "E002",
+      "date": "2026-09-01",
+      "topic": "Skip-hire transaction value",
+      "claim": "Published UK pricing guidance indicates domestic skip-hire transactions can commonly fall roughly in the £120–£450+ range depending on size and location.",
+      "source_name": "Recyclr Marketplace – Skip Hire Prices",
+      "source_url": "https://marketplace.recyclr.co.uk/guides/skip-hire-prices",
+      "source_type": "industry pricing guide",
+      "evidence_type": "market evidence",
+      "reliability": "medium",
+      "status": "captured",
+      "supports": [
+        "F001",
+        "C001"
+      ],
+      "notes": "Illustrative range only; not a commission forecast."
+    },
+    {
+      "id": "E003",
+      "date": "2026-09-01",
+      "topic": "Tree-surgery lead economics",
+      "claim": "Specialist trade-marketing and lead-generation providers publish evidence of customer-acquisition spending and commercial value in tree-surgery enquiries.",
+      "source_name": "Arborist Leads – advertising budget research",
+      "source_url": "https://arboristleads.co.uk/blog/tree-surgeon-advertising-budget",
+      "source_type": "industry commercial publisher",
+      "evidence_type": "market evidence",
+      "reliability": "medium",
+      "status": "captured",
+      "supports": [
+        "F002",
+        "C002"
+      ],
+      "notes": "Needs independent cross-checking before any final investment."
+    },
+    {
+      "id": "E004",
+      "date": "2026-09-01",
+      "topic": "Damp-survey referral market",
+      "claim": "Existing UK services operate around damp-survey information and introductions, demonstrating an established commercial flow.",
+      "source_name": "Damp Survey Prices",
+      "source_url": "https://dampsurveyprices.co.uk/",
+      "source_type": "commercial competitor",
+      "evidence_type": "competitor validation",
+      "reliability": "medium",
+      "status": "captured",
+      "supports": [
+        "F003",
+        "C003"
+      ],
+      "notes": "Competitor existence validates the flow but also increases entry risk."
+    },
+    {
+      "id": "E005",
+      "date": "2026-09-01",
+      "topic": "UK trade document demand",
+      "claim": "Current marketplace listings show priced construction and trade document templates and packs.",
+      "source_name": "Etsy – TradeDocsUKGB",
+      "source_url": "https://www.etsy.com/shop/TradeDocsUKGB",
+      "source_type": "marketplace listing",
+      "evidence_type": "market validation",
+      "reliability": "medium",
+      "status": "captured",
+      "supports": [
+        "F004",
+        "C004"
+      ],
+      "notes": "Listing existence does not prove sales volume."
+    },
+    {
+      "id": "E006",
+      "date": "2026-09-01",
+      "topic": "Commercial waste comparison competition",
+      "claim": "Existing businesses already run postcode-to-quote comparison funnels for commercial waste collection.",
+      "source_name": "Compare Commercial – Waste Collection",
+      "source_url": "https://www.comparecommercial.co.uk/facilities/waste-collection",
+      "source_type": "commercial competitor",
+      "evidence_type": "competitor validation",
+      "reliability": "high",
+      "status": "captured",
+      "supports": [
+        "F005",
+        "C005"
+      ],
+      "notes": "Strong evidence of a crowded model, not evidence that the entire market is unattractive."
+    }
+  ],
+  "findings": [
+    {
+      "id": "F001",
+      "date": "2026-09-01",
+      "topic": "Waste-disposal transaction capture",
+      "statement": "Skip hire has a direct partner-based monetisation route before product build, but the opportunity only survives if distribution and decision-tool differentiation are proven.",
+      "evidence": [
+        "E001",
+        "E002"
+      ],
+      "confidence": "medium-high",
+      "status": "active",
+      "implication": "Advance to kill-test stage rather than final selection."
+    },
+    {
+      "id": "F002",
+      "date": "2026-09-01",
+      "topic": "Tree-surgery demand capture",
+      "statement": "Qualified tree-surgery enquiries have commercial value, but the route requires both demand acquisition and provider-side sales.",
+      "evidence": [
+        "E003"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "implication": "Keep as challenger."
+    },
+    {
+      "id": "F003",
+      "date": "2026-09-01",
+      "topic": "Damp-survey introductions",
+      "statement": "The commercial flow exists but direct competitors occupy the obvious search and introduction space.",
+      "evidence": [
+        "E004"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "implication": "Keep only if a distinct supply gap or decision layer is found."
+    },
+    {
+      "id": "F004",
+      "date": "2026-09-01",
+      "topic": "UK trade digital products",
+      "statement": "There is observable marketplace demand for trade documents, but competition and low ticket economics require a differentiated workflow and distribution plan.",
+      "evidence": [
+        "E005"
+      ],
+      "confidence": "medium",
+      "status": "active",
+      "implication": "Keep as challenger."
+    },
+    {
+      "id": "F005",
+      "date": "2026-09-01",
+      "topic": "Commercial waste comparison",
+      "statement": "The obvious postcode-to-quote funnel is already directly competed for, reducing its attractiveness as an entry point.",
+      "evidence": [
+        "E006"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Eliminate from the current top tier."
+    }
+  ],
+  "candidate_links": {
+    "C001": {
+      "name": "Waste disposal decision engine → skip-hire transaction capture",
+      "findings": [
+        "F001"
+      ],
+      "evidence": [
+        "E001",
+        "E002"
+      ],
+      "decision": "D05"
+    },
+    "C002": {
+      "name": "Narrow local tree-surgery demand asset",
+      "findings": [
+        "F002"
+      ],
+      "evidence": [
+        "E003"
+      ],
+      "decision": null
+    },
+    "C003": {
+      "name": "Independent damp-survey introduction asset",
+      "findings": [
+        "F003"
+      ],
+      "evidence": [
+        "E004"
+      ],
+      "decision": null
+    },
+    "C004": {
+      "name": "Narrow UK trade document digital product",
+      "findings": [
+        "F004"
+      ],
+      "evidence": [
+        "E005"
+      ],
+      "decision": null
+    },
+    "C005": {
+      "name": "Commercial waste comparison",
+      "findings": [
+        "F005"
+      ],
+      "evidence": [
+        "E006"
+      ],
+      "decision": null
+    }
+  }
 }
