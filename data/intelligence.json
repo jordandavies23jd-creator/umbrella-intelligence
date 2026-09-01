@@ -758,6 +758,19 @@
   ],
   "decision_records": [
     {
+      "id": "D06",
+      "status": "testing",
+      "impact": "critical",
+      "decision": "Supersede the standalone skip-size calculator concept with a route-first waste disposal decision engine.",
+      "rationale": "Competition evidence shows skip calculators are already abundant. Customer decision evidence and multiple monetisation routes support a broader route-selection proposition.",
+      "supersedes": [
+        "D05 framing of V1 as primarily skip-size recommendation"
+      ],
+      "applies_to": [
+        "Project 1 lead candidate"
+      ]
+    },
+    {
       "id": "D05",
       "status": "testing",
       "impact": "high",
@@ -875,16 +888,17 @@
   "project_1_shortlist": [
     {
       "rank": 1,
-      "name": "Waste disposal decision engine → skip-hire transaction capture",
-      "status": "lead candidate",
-      "confidence": "provisional",
-      "revenue_engine": "Tracked affiliate commission on completed skip-hire transactions; expand later to other disposal routes and partners.",
-      "v1": "A short decision flow: project type → waste type → approximate volume → placement → location. Output: recommended disposal route, likely skip size where relevant, key constraints, and partner route.",
-      "why_it_leads": "Best current balance of direct monetisation, low startup complexity, automation and fast ability to test a real transaction path.",
+      "name": "Route-first UK waste disposal decision engine",
+      "status": "lead candidate – narrowed",
+      "confidence": "medium-high",
+      "revenue_engine": "Multiple partner routes rather than dependence on one skip provider: skip referrals/affiliate transactions, skip-bag affiliate sales, and later other disposal partners.",
+      "v1": "A decision engine that recommends the disposal method before recommending a supplier: tip/self-disposal, bag, man-and-van, skip, grab or wait-and-load. Only after the route is chosen does it monetise the relevant transaction.",
+      "why_it_leads": "Research has now improved the original idea: the customer problem is a route decision, and the revenue model can sit behind multiple transaction outcomes.",
       "kill_criteria": [
-        "No partner can provide workable attribution or economics.",
-        "A differentiated traffic route cannot be identified.",
-        "The decision flow does not materially outperform a simple outbound comparison link in user conversion."
+        "No credible distribution wedge beyond competing for generic 'skip hire' search traffic.",
+        "Partner programmes cannot legally/operationally support the intended referral flow.",
+        "Users do not find the route recommendation sufficiently more useful than going directly to an existing marketplace.",
+        "Economics per visitor cannot justify traffic acquisition."
       ]
     },
     {
@@ -1050,6 +1064,74 @@
         "C005"
       ],
       "notes": "Strong evidence of a crowded model, not evidence that the entire market is unattractive."
+    },
+    {
+      "id": "E007",
+      "date": "2026-09-01",
+      "topic": "Skip-size calculator competition",
+      "claim": "Multiple live UK sites already provide multi-step skip-size recommendation flows, so a skip-size calculator alone is not sufficiently differentiated.",
+      "source_name": "FindMySkip; SkipHub; SkipHire UK",
+      "source_url": "https://findmyskip.co.uk/tools/skip-size-calculator",
+      "source_type": "direct competitor evidence",
+      "evidence_type": "competition",
+      "reliability": "high",
+      "status": "reviewed",
+      "supports": [
+        "F006",
+        "C001"
+      ],
+      "notes": "This materially weakens the original V1 positioning."
+    },
+    {
+      "id": "E008",
+      "date": "2026-09-01",
+      "topic": "Waste route complexity",
+      "claim": "Skip, grab, man-and-van, skip bag and wait-and-load each fit different combinations of volume, waste type, access and timing.",
+      "source_name": "Skip Hire Cost; Skip For Hire; Rent-a-Skip",
+      "source_url": "https://www.skipforhire.co.uk/",
+      "source_type": "market comparison evidence",
+      "evidence_type": "customer decision complexity",
+      "reliability": "medium-high",
+      "status": "reviewed",
+      "supports": [
+        "F007",
+        "C006"
+      ],
+      "notes": "Independent and commercial sources broadly agree on route differences."
+    },
+    {
+      "id": "E009",
+      "date": "2026-09-01",
+      "topic": "Multi-route affiliate monetisation",
+      "claim": "HIPPO publicly lists an affiliate programme for waste-disposal products with 30-day attribution and commission starting from 3% on eligible HIPPOBAG and collection packages.",
+      "source_name": "Awin – Hippowaste Affiliate Programme",
+      "source_url": "https://ui.awin.com/merchant-profile/8016",
+      "source_type": "affiliate network merchant profile",
+      "evidence_type": "primary commercial evidence",
+      "reliability": "high",
+      "status": "captured",
+      "supports": [
+        "F007",
+        "C006"
+      ],
+      "notes": "Partner approval and current terms must be confirmed before launch."
+    },
+    {
+      "id": "E010",
+      "date": "2026-09-01",
+      "topic": "Fixed-fee skip referral economics",
+      "claim": "JUSTHIRE publicly advertises £30 for completed referred skip jobs within its referral programme.",
+      "source_name": "JUSTHIRE Referral Partners",
+      "source_url": "https://justhire.com/refer/skip-hire",
+      "source_type": "commercial partner programme",
+      "evidence_type": "primary commercial evidence",
+      "reliability": "high",
+      "status": "captured",
+      "supports": [
+        "F007",
+        "C006"
+      ],
+      "notes": "The public programme appears oriented to job referrals; eligibility and fit for a consumer website require validation."
     }
   ],
   "findings": [
@@ -1113,6 +1195,33 @@
       "confidence": "high",
       "status": "active",
       "implication": "Eliminate from the current top tier."
+    },
+    {
+      "id": "F006",
+      "date": "2026-09-01",
+      "topic": "Original waste V1 is insufficiently differentiated",
+      "statement": "A skip-size calculator is already a crowded product pattern and should not be built as Project 1's standalone proposition.",
+      "evidence": [
+        "E007"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Supersede the 'skip size calculator' framing."
+    },
+    {
+      "id": "F007",
+      "date": "2026-09-01",
+      "topic": "Broader waste decision engine has stronger logic",
+      "statement": "The valuable user question is not 'what size skip?' but 'what is the best disposal route for this exact waste job?'; different routes can be appropriate and multiple partner monetisation paths exist.",
+      "evidence": [
+        "E008",
+        "E009",
+        "E010",
+        "E001"
+      ],
+      "confidence": "medium-high",
+      "status": "active",
+      "implication": "Replace the lead candidate with a route-first waste decision engine and validate distribution before build."
     }
   ],
   "candidate_links": {
@@ -1166,6 +1275,21 @@
         "E006"
       ],
       "decision": null
+    },
+    "C006": {
+      "name": "Route-first UK waste disposal decision engine",
+      "findings": [
+        "F006",
+        "F007"
+      ],
+      "evidence": [
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E001"
+      ],
+      "decision": "D06"
     }
   }
 }
