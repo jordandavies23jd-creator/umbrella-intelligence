@@ -409,9 +409,86 @@
     "digital-ma",
     "b2b-leads",
     "operational-arbitrage",
-    "project-1-shortlist-v2"
+    "project-1-shortlist-v2",
+    "project-1-concrete-candidates",
+    "skip-hire-affiliate",
+    "waste-disposal",
+    "tree-surgery-leads",
+    "damp-survey-referral",
+    "trade-digital-products",
+    "D05-testing"
   ],
   "research_log": [
+    {
+      "date": "2026-09-01",
+      "round": "Project 1 – concrete candidate narrowing",
+      "method": "Revenue mechanism first; candidates scored against the active weighted framework. Evidence quality recorded separately from attractiveness.",
+      "candidates": [
+        {
+          "name": "Skip-hire transaction capture utility",
+          "concept": "A free UK waste-disposal decision tool that identifies the likely cheapest/most suitable route for a specific clearance or project, starting with skip hire and routing qualified users to a tracked partner.",
+          "mechanism": "Affiliate transaction commission",
+          "evidence": [
+            "A live Skip Hire Comparison affiliate programme publishes 10% commission on net skip-hire order revenue and a partner reporting process.",
+            "Typical domestic skip transactions commonly fall in roughly the £120–£450+ range depending on size, location and project.",
+            "Users face a real purchase decision involving size, waste type, permit/placement and price variation."
+          ],
+          "weighted_attractiveness": 7.9,
+          "evidence_quality": "medium-high",
+          "main_risk": "Generic skip calculators and price guides already exist; distribution and differentiation are the decisive constraints.",
+          "differentiation_test": "Do not build another size calculator. Test a broader decision flow: skip vs alternative disposal route, then recommend size/constraints and pass high-intent users to a transaction partner."
+        },
+        {
+          "name": "Narrow local tree-surgery lead asset",
+          "concept": "An unbranded demand-capture site focused on a specific geography and job class, selling qualified or exclusive enquiries to local tree surgeons.",
+          "mechanism": "Pay-per-lead / exclusive lead",
+          "evidence": [
+            "Published 2026 trade marketing data shows meaningful customer-acquisition spending and job values in tree surgery.",
+            "Specialist lead sellers publicly offer tree-surgery leads and report exclusive-lead economics."
+          ],
+          "weighted_attractiveness": 7.5,
+          "evidence_quality": "medium",
+          "main_risk": "Requires demand acquisition and local provider relationships before the system earns reliably.",
+          "differentiation_test": "One geography + one job intent, not a national generic directory."
+        },
+        {
+          "name": "Independent damp-survey introduction asset",
+          "concept": "A cost and decision resource that routes homeowners with high-intent damp concerns to appropriate independent surveyors.",
+          "mechanism": "Qualified referral / lead sale",
+          "evidence": [
+            "Multiple current UK sites monetise damp-survey introductions, confirming an established commercial flow.",
+            "Independent surveys commonly represent a paid specialist transaction."
+          ],
+          "weighted_attractiveness": 7.3,
+          "evidence_quality": "medium",
+          "main_risk": "Existing specialist competitors already occupy the exact query space; provider-network quality is essential.",
+          "differentiation_test": "Only proceed if a distinct evidence/decision layer or geographic supply gap is proven."
+        },
+        {
+          "name": "UK trade document digital product asset",
+          "concept": "Sell practical UK trade paperwork packs or narrowly scoped templates as repeatable downloads.",
+          "mechanism": "Direct digital product sales",
+          "evidence": [
+            "Current marketplace listings demonstrate active construction-template categories and priced UK trade document packs.",
+            "Digital delivery has near-zero marginal fulfilment cost."
+          ],
+          "weighted_attractiveness": 7.1,
+          "evidence_quality": "medium",
+          "main_risk": "Commoditisation and marketplace competition; low ticket size means distribution volume matters.",
+          "differentiation_test": "Only proceed with a narrowly differentiated pack tied to a real workflow rather than generic templates."
+        },
+        {
+          "name": "Commercial waste comparison",
+          "concept": "Compare recurring business waste contracts and route businesses to suppliers.",
+          "mechanism": "Lead / referral / broker revenue",
+          "weighted_attractiveness": 6.6,
+          "evidence_quality": "high",
+          "main_risk": "Research found several direct competitors already running almost identical postcode-to-quote funnels, making entry harder.",
+          "status": "eliminated from current top tier"
+        }
+      ],
+      "conclusion": "The strongest current candidate is transaction capture around UK waste disposal, with skip hire as the first monetisable transaction. It has the clearest direct partner economics and low-cost V1, while still allowing expansion into a broader disposal-decision asset."
+    },
     {
       "date": "2026-08-31",
       "round": "Project 1 – revenue-first widening pass",
@@ -681,6 +758,17 @@
   ],
   "decision_records": [
     {
+      "id": "D05",
+      "status": "testing",
+      "impact": "high",
+      "decision": "Advance the waste-disposal transaction-capture concept as the current Project 1 lead candidate; do not yet treat it as finally selected.",
+      "rationale": "Among concrete candidates researched, it currently offers the clearest direct monetisation path with low V1 complexity and strong automation potential. The next step is to try to disprove it through partner, distribution and conversion validation.",
+      "supersedes": [],
+      "applies_to": [
+        "Project 1 narrowing"
+      ]
+    },
+    {
       "id": "D01",
       "status": "accepted",
       "impact": "critical",
@@ -777,5 +865,39 @@
     "08-lessons": "Validated reusable learning",
     "09-rejected-and-parked": "Dead ends and revisit triggers",
     "10-intelligence-inbox": "Unvalidated incoming information awaiting promotion"
-  }
+  },
+  "project_1_shortlist": [
+    {
+      "rank": 1,
+      "name": "Waste disposal decision engine → skip-hire transaction capture",
+      "status": "lead candidate",
+      "confidence": "provisional",
+      "revenue_engine": "Tracked affiliate commission on completed skip-hire transactions; expand later to other disposal routes and partners.",
+      "v1": "A short decision flow: project type → waste type → approximate volume → placement → location. Output: recommended disposal route, likely skip size where relevant, key constraints, and partner route.",
+      "why_it_leads": "Best current balance of direct monetisation, low startup complexity, automation and fast ability to test a real transaction path.",
+      "kill_criteria": [
+        "No partner can provide workable attribution or economics.",
+        "A differentiated traffic route cannot be identified.",
+        "The decision flow does not materially outperform a simple outbound comparison link in user conversion."
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "Narrow local tree-surgery demand asset",
+      "status": "challenger",
+      "confidence": "provisional"
+    },
+    {
+      "rank": 3,
+      "name": "Independent damp-survey introduction asset",
+      "status": "challenger",
+      "confidence": "provisional"
+    },
+    {
+      "rank": 4,
+      "name": "Narrow UK trade document digital product",
+      "status": "challenger",
+      "confidence": "provisional"
+    }
+  ]
 }
