@@ -758,6 +758,17 @@
   ],
   "decision_records": [
     {
+      "id": "D07",
+      "status": "testing",
+      "impact": "critical",
+      "decision": "Do not approve full Project 1 build yet; require a distribution-wedge validation before development.",
+      "rationale": "Problem and monetisation validation pass, but direct competition and acquisition economics currently fail the evidence threshold. Building before identifying a traffic wedge would violate the revenue-first framework.",
+      "supersedes": [],
+      "applies_to": [
+        "Project 1 C006"
+      ]
+    },
+    {
       "id": "D06",
       "status": "testing",
       "impact": "critical",
@@ -889,7 +900,7 @@
     {
       "rank": 1,
       "name": "Route-first UK waste disposal decision engine",
-      "status": "lead candidate – narrowed",
+      "status": "not approved for build – distribution test required",
       "confidence": "medium-high",
       "revenue_engine": "Multiple partner routes rather than dependence on one skip provider: skip referrals/affiliate transactions, skip-bag affiliate sales, and later other disposal partners.",
       "v1": "A decision engine that recommends the disposal method before recommending a supplier: tip/self-disposal, bag, man-and-van, skip, grab or wait-and-load. Only after the route is chosen does it monetise the relevant transaction.",
@@ -899,7 +910,8 @@
         "Partner programmes cannot legally/operationally support the intended referral flow.",
         "Users do not find the route recommendation sufficiently more useful than going directly to an existing marketplace.",
         "Economics per visitor cannot justify traffic acquisition."
-      ]
+      ],
+      "decision": "D07"
     },
     {
       "rank": 2,
@@ -1132,6 +1144,74 @@
         "C006"
       ],
       "notes": "The public programme appears oriented to job referrals; eligibility and fit for a consumer website require validation."
+    },
+    {
+      "id": "E011",
+      "date": "2026-09-01",
+      "topic": "Waste route choice is a genuine decision",
+      "claim": "UK guidance and market sources show householders can choose council recycling centres, council collections or authorised private services, while route suitability varies by waste volume, access, timing and labour.",
+      "source_name": "GOV.UK + market comparison sources",
+      "source_url": "https://www.gov.uk/dispose-household-waste",
+      "source_type": "government and market evidence",
+      "evidence_type": "problem validation",
+      "reliability": "high",
+      "status": "reviewed",
+      "supports": [
+        "F008",
+        "C006"
+      ],
+      "notes": "Government guidance validates the decision space; commercial sources validate route differences."
+    },
+    {
+      "id": "E012",
+      "date": "2026-09-01",
+      "topic": "Monetisation is real but narrow",
+      "claim": "Skip Hire Comparison publishes a 10% commission scheme tied to partner codes, while HIPPO lists affiliate commissions starting at 3%; these are real monetisation routes but do not prove consumer acquisition economics.",
+      "source_name": "Skip Hire Comparison + Awin HIPPO",
+      "source_url": "https://skiphirecomparison.co.uk/legal/affiliates-terms-and-conditions",
+      "source_type": "partner terms",
+      "evidence_type": "monetisation validation",
+      "reliability": "high",
+      "status": "reviewed",
+      "supports": [
+        "F009",
+        "C006"
+      ],
+      "notes": "Attribution mechanics and partner approval remain launch risks."
+    },
+    {
+      "id": "E013",
+      "date": "2026-09-01",
+      "topic": "Competition and disintermediation risk",
+      "claim": "Existing national comparison and booking sites already offer postcode search, instant quotes, booking, size guidance and sometimes alternative-route comparisons; a new site cannot win merely by reproducing these features.",
+      "source_name": "Skip Hire Comparison; FindASkip; market competitors",
+      "source_url": "https://skiphirecomparison.co.uk/skip-hire",
+      "source_type": "direct competitor evidence",
+      "evidence_type": "competition",
+      "reliability": "high",
+      "status": "reviewed",
+      "supports": [
+        "F010",
+        "C006"
+      ],
+      "notes": "This is the strongest negative evidence against immediate build."
+    },
+    {
+      "id": "E014",
+      "date": "2026-09-01",
+      "topic": "Regulatory and trust burden",
+      "claim": "UK householders must take reasonable measures to transfer waste only to authorised persons, creating an opportunity for trust guidance but also raising the accuracy and partner-vetting burden for a recommendation product.",
+      "source_name": "GOV.UK Waste Duty of Care",
+      "source_url": "https://www.gov.uk/government/publications/waste-duty-of-care-code-of-practice/waste-duty-of-care-code-of-practice",
+      "source_type": "government guidance",
+      "evidence_type": "regulatory risk/opportunity",
+      "reliability": "high",
+      "status": "reviewed",
+      "supports": [
+        "F011",
+        "C006"
+      ],
+      "notes": "Product should avoid implying legal guarantees and should link to official verification."
     }
   ],
   "findings": [
@@ -1222,6 +1302,54 @@
       "confidence": "medium-high",
       "status": "active",
       "implication": "Replace the lead candidate with a route-first waste decision engine and validate distribution before build."
+    },
+    {
+      "id": "F008",
+      "date": "2026-09-01",
+      "topic": "Problem exists",
+      "statement": "Consumers genuinely face a multi-option disposal decision rather than a single skip-size decision.",
+      "evidence": [
+        "E011"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Problem validation passes."
+    },
+    {
+      "id": "F009",
+      "date": "2026-09-01",
+      "topic": "Revenue mechanism exists",
+      "statement": "Partner-based transaction revenue is demonstrably available for at least some waste-disposal routes, but unit economics per visitor remain unproven.",
+      "evidence": [
+        "E012"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Monetisation validation passes provisionally; economics test remains open."
+    },
+    {
+      "id": "F010",
+      "date": "2026-09-01",
+      "topic": "Distribution is currently unproven",
+      "statement": "The direct competitors already occupy the obvious high-intent search and booking journey, so copying their funnel is unlikely to create an advantage.",
+      "evidence": [
+        "E013"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Fail the distribution test unless a specific wedge is discovered before building."
+    },
+    {
+      "id": "F011",
+      "date": "2026-09-01",
+      "topic": "Trust can differentiate but increases responsibility",
+      "statement": "Authorised-carrier verification is a meaningful user concern, but presenting recommendations introduces accuracy and trust requirements.",
+      "evidence": [
+        "E014"
+      ],
+      "confidence": "high",
+      "status": "active",
+      "implication": "Potential feature, not sufficient reason to build alone."
     }
   ],
   "candidate_links": {
