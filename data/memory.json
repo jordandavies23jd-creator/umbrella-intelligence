@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "purpose": "Persistent project and institutional memory for Umbrella Intelligence. These records are intended to be retrieved before future decisions and updated when validated work creates new knowledge.",
+  "write_rules": [
+    "Save durable project knowledge here, not temporary chat context.",
+    "Prefer structured records that explain what was done, what was learned, what remains unresolved, and what should happen next.",
+    "Update existing project memory when new evidence changes the position; do not create contradictory duplicates without explaining the change.",
+    "Project memory should capture process as well as outcomes so future work can continue without restarting from zero."
+  ],
+  "projects": {
+    "Buildalong": {
+      "purpose": "Persistent memory of Buildalong's development and validation journey under Umbrella Intelligence.",
+      "current_stage": "End-to-end product testing before real-world builder/customer testing",
+      "process": [
+        "Core V1 builder experience",
+        "Company branding and personalisation",
+        "Possible Jobs",
+        "Quote creation",
+        "£10 payment system and secure payment gating",
+        "Builder-to-customer quote hand-off",
+        "Customer accepts or declines quote",
+        "Customer build tracking",
+        "Customer updates and photos",
+        "Builder invites trades to a job",
+        "Trade access and permissions",
+        "Full end-to-end testing across Builder → Customer → Trades",
+        "Real builder testing",
+        "Real customer testing",
+        "Iterate from genuine real-world feedback"
+      ],
+      "validation_gate": "Buildalong is not considered ready merely because the code deploys successfully. The complete experience must work end-to-end and then be proven with real builders and customers.",
+      "operating_loop": "Build → test → observe failure/confusion → fix → retest → validate with real users → record learning",
+      "last_update": "2026-09-04",
+      "notes": [
+        "Payment integration has required multiple rounds of debugging; payment should be treated as an end-to-end dependency, not a completed feature merely because Stripe is connected.",
+        "The customer and trades experiences are core product flows and must be tested before real-world rollout.",
+        "Future Buildalong work should retrieve this process first so development does not lose sight of the real-world validation milestone."
+      ]
+    }
+  },
+  "records": []
+}
